@@ -1,21 +1,14 @@
 
-import math #Libreria para usar el coseno y seno
-#import keyboard 
+import math 
 import serial
 from kivy.app import App
-#from kivy.uix.label import Label
-#from kivy.uix.button import Button
 from kivy.uix.widget import Widget
-#from kivy.uix.boxlayout import BoxLayout
-#from kivy.lang import Builder
 from kivy.properties import StringProperty
 from kivy.graphics.vertex_instructions import Line
-
 
 #Inmobiliaria Mar De Cortez
 #Carlos Octavio Solorzano Aguilar
 #Daan Yael Lara Camorlinga 
-
 
 dis = []
 hoy = 0  
@@ -27,9 +20,6 @@ coor_x = [] #Almacenaje de coordenadas horizontales
 coor_y = [] #Almacenaje de coordenadas verticales
 
 coor_linea = [0,0,0,0]
-
-#ser = serial.Serial("com3",9600)
-
 
 class Withg(Widget):
 
@@ -55,13 +45,7 @@ class Withg(Widget):
                dis.append(avr)
                print(dis)
 
-
-
         num_ang = range(0,len(dis))
-
-        num = range(0,len(dis)-1) #Numero de lineas (mas uno que se hara aparte)
-
-        si = 1
 
         self.coor_linea = [0,0,0,0]
 
@@ -92,9 +76,6 @@ class Withg(Widget):
         with self.canvas:
             self.oli = Line(points=(self.coor_linea))
             self.coor_linea.clear()
-
-        
-
 
 class funkyApp(App):
     pass 
